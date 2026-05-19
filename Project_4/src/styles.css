@@ -1,0 +1,20 @@
+/* 調整主標題字體大小與顏色 */
+h1.title {
+  font-size: 1.5rem;  /* 原本約 38–42px，可改為 28、24、20... */
+  color: cornflowerblue;   /* 可選：變更顏色 */
+  font-weight: bold;
+}
+
+/* 調整作者與日期區塊樣式 */
+.quarto-title-author,
+.quarto-title-published {
+  font-size: 18;  /* 預設大約是 16px，可調小一點 */
+  /*color: #444444;    改為稍微淡一點的灰色 */
+  font-weight: bold;
+}
+
+/* 控制圖片輸出尺寸 */
+img {
+  max-width: 100%;
+  height: auto;
+}
