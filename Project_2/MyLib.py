@@ -28,8 +28,8 @@ def montage(A, m, n):
     M = np.zeros((sz*m, sz*n))
 
     for i in range(m*n):
-        row = (i // n) * sz # // 代表整數除法
-        col = (i % n) * sz  # % 代表取餘數
+        row = (i // n) * sz 
+        col = (i % n) * sz  
         M[row:row+sz, col:col+sz] = A[:, i].reshape(sz, sz)
     return M
 
@@ -54,7 +54,7 @@ def show_montage(X, m, n, h, w, title):
     h, w : create an h x w montage image with figsize = (w,h)
     '''
     fig, axes = plt.subplots(h, w, figsize=(w, h))
-    if X.shape[1] < w * h: # 影像張數不到 w x h 張，用 0 向量補齊     
+    if X.shape[1] < w * h: 
         X = np.c_[X, np.zeros((X.shape[0], w*h-X.shape[1]))]
     for i, ax in enumerate(axes.flat):
         ax.imshow(X[:,i].reshape(m, n).T, cmap='gray')
