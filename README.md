@@ -9,7 +9,7 @@ The projects range from foundational unsupervised learning methods such as PCA a
 * [Project 1: Principal Component Analysis (PCA)](./Project_1)
 * [Project 2: Singular Value Decomposition (SVD)](./Project_2)
 * [Project 3: Face Image Classification](./Project_3)
-* [Project 4: DeblurCNN for Image Deblurring](./src/Project_4)
+* [Project 4: DeblurCNN for Image Deblurring](./Project_4/src)
 
 ## 📂 File Directory
 
@@ -19,7 +19,7 @@ The projects range from foundational unsupervised learning methods such as PCA a
 | **Project 2** | [`.ipynb`](./Project_2/SVD.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_2/SVD.html) |
 | **Project 3 - Part 1** | [`.ipynb`](./Project_3/Classification_Part1.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part1.html) |
 | **Project 3 - Part 2** | [`.ipynb`](./Project_3/Classification_Part2.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part2.html) |
-| **Project 4** | [`.ipynb`](./Project_4/DeblurCNN.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_4/DeblurCNN.html) |
+| **Project 4** | [`.ipynb`](./Project_4/src/DeblurCNN.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_4/src/DeblurCNN.html) |
 
 ---
 
