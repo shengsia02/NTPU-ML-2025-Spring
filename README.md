@@ -32,7 +32,7 @@ This project studies **Principal Component Analysis (PCA)** on three structured 
 ### Project 2: Singular Value Decomposition (SVD)
 This project investigates **Singular Value Decomposition (SVD)** for image compression, patch-based reconstruction, and eigenface-style image encryption and decryption.
 * Compared PCA, NumPy SVD, and scikit-learn `TruncatedSVD` on handwritten digit image compression to verify their mathematical relationship and practical differences.
-* Implemented Rank- $q$ approximation and showed that larger $q$ values preserve more image detail, while smaller $q$ values increase compression at the cost of blur.
+* Implemented Rank-$`q`$ approximation and showed that larger $q$ values preserve more image detail, while smaller $q$ values increase compression at the cost of blur.
 * Tested patch-based SVD on images such as Lenna and Afghan Girl, then used Yale Faces singular-vector features to compare how well face-derived bases reconstruct face and non-face images.
 
 ### Project 3: Face Image Classification Using Logistic Regression, SVM, and Neural Network
