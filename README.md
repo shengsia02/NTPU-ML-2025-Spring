@@ -15,43 +15,37 @@ The projects range from foundational unsupervised learning methods such as PCA a
 
 | Project | Code | Report |
 | :--- | :---: | :---: |
-| **Project 1** | [`.ipynb`](./Project_1/PCA.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_1/PCA.html) |
-| **Project 2** | [`.ipynb`](./Project_2/SVD.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_2/SVD.html) |
-| **Project 3 - Part 1** | [`.ipynb`](./Project_3/Classification_Part1.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part1.html) |
-| **Project 3 - Part 2** | [`.ipynb`](./Project_3/Classification_Part2.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part2.html) |
-| **Project 4** | [`.ipynb`](./Project_4/src/DeblurCNN.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_4/src/DeblurCNN.html) |
+| **Project 1** | [`ipynb`](./Project_1/PCA.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_1/PCA.html) |
+| **Project 2** | [`ipynb`](./Project_2/SVD.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_2/SVD.html) |
+| **Project 3 - Part 1** | [`ipynb`](./Project_3/Classification_Part1.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part1.html) |
+| **Project 3 - Part 2** | [`ipynb`](./Project_3/Classification_Part2.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_3/Classification_Part2.html) |
+| **Project 4** | [`ipynb`](./Project_4/src/DeblurCNN.ipynb) | [`html`](https://htmlpreview.github.io/?https://github.com/shengsia02/NTPU-ML-2025-Spring/blob/main/Project_4/src/DeblurCNN.html) |
 
 ---
 
 ### Project 1: Principal Component Analysis (PCA)
-This project explores the application of **Principal Component Analysis (PCA)** for dimensionality reduction and data visualization.
-* Applied PCA to multiple datasets to investigate how high-dimensional variables can be transformed into lower-dimensional principal components.
-* Compared PCA results before and after standardization to analyze how feature scaling affects eigenvalues, explained variance ratios, and the interpretation of principal components.
-* Used visualization methods such as correlation heatmaps, boxplots, scree plots, Pareto plots, and 2D/3D scatter plots to examine whether PCA results align with the original group labels.
-* Discussed the relationship between the original variable correlations and the principal component loading structure to better understand how PCA extracts important information from data.
+This project studies **Principal Component Analysis (PCA)** on three structured datasets: the Wine dataset, the 2025 NUMBEO city quality-of-life dataset, and the Breast Cancer dataset.
+* Used correlation heatmaps and boxplots to diagnose variable relationships and scaling problems, then compared PCA before and after standardization to show how feature scaling changes eigenvalues, explained variance ratios, scree plots, Pareto plots, and component interpretation.
+* Visualized the first two or three principal components with 2D and 3D scatter plots to evaluate whether PCA-separated patterns match the original labels or grouped categories.
+* Compared PCA loading structures with original correlation matrices to explain how highly correlated variables contribute to the same principal components.
 
 ### Project 2: Singular Value Decomposition (SVD)
-This project investigates **Singular Value Decomposition (SVD)** and its applications in image matrix analysis.
-* Compared PCA and SVD from the perspective of image compression to verify their mathematical relationship and practical differences.
-* Implemented Rank-$q$ approximation to compress image matrices and observed how different values of $q$ affect image clarity and reconstruction quality.
-* Explored whether dividing an image into smaller blocks before applying SVD can improve visual quality when using a small rank approximation.
-* Applied face-based singular vector features to image encoding and decoding tasks, then compared reconstruction performance between face images and non-face images.
+This project investigates **Singular Value Decomposition (SVD)** for image compression, patch-based reconstruction, and eigenface-style image encryption and decryption.
+* Compared PCA, NumPy SVD, and scikit-learn `TruncatedSVD` on handwritten digit image compression to verify their mathematical relationship and practical differences.
+* Implemented Rank-$q$ approximation and showed that larger $q$ values preserve more image detail, while smaller $q$ values increase compression at the cost of blur.
+* Tested patch-based SVD on images such as Lenna and Afghan Girl, then used Yale Faces singular-vector features to compare how well face-derived bases reconstruct face and non-face images.
 
 ### Project 3: Face Image Classification Using Logistic Regression, SVM, and Neural Network
-This project compares three supervised classification models for face image recognition: **Multinomial Logistic Regression**, **Support Vector Machine (SVM)**, and **Neural Network**.
-* Used both original image features and PCA-reduced features to train and evaluate classification models.
-* Compared classification accuracy, training efficiency, convergence behavior, and generalization ability under different feature representations.
-* Part 1 focuses on the **AT&T face dataset**, which contains face images from 40 subjects.
-* Part 2 extends the experiment to the **Yale Face dataset**, which contains face images from 38 subjects.
-* Analyzed whether PCA can reduce feature dimensionality while preserving sufficient information for accurate face recognition.
+This project compares **Multinomial Logistic Regression (MLR)**, **Support Vector Machine (SVM)**, and **Multilayer Perceptron (MLP)** models for face image classification under original and PCA-reduced feature representations.
+* Part 1 uses the **AT&T face dataset** with 40 subjects and 400 images, where PCA keeps 90% cumulative explained variance and reduces the feature space to 59 principal components.
+* On AT&T, MLR remains highly stable with and without PCA, SVM improves slightly after PCA, while MLP performs better on original features than on PCA features.
+* Part 2 uses the **Yale Face dataset** with 38 subjects and 2410 images, showing that MLR is the strongest and most stable baseline, SVM is more sensitive to kernel and hyperparameter choices, and MLP benefits substantially from PCA in both accuracy and convergence speed.
 
 ### Project 4: DeblurCNN for Image Deblurring and Super-Resolution
-This project applies **Convolutional Neural Networks (CNNs)** to image deblurring and super-resolution tasks.
-* Prepared training data by cropping images into small patches, applying Gaussian blur, and using downscaling-upscaling degradation to simulate realistic blur conditions.
-* Trained and compared several CNN-based models, including **DeblurCNN**, **DeblurCNN_RES**, **DeblurSuperResCNN**, **DnCNN**, and **EDSR**.
-* Used loss curves and **PSNR (Peak Signal-to-Noise Ratio)** to evaluate model convergence and image restoration performance.
-* Compared sharp images, blurred images, and restored images to visually and quantitatively assess each model's deblurring ability.
-* Applied the selected trained model to an additional image outside the training and testing sets to evaluate practical generalization performance.
+This project applies **Convolutional Neural Networks (CNNs)** to image deblurring and super-resolution-style restoration under synthetic blur degradation.
+* Prepared training data from the **T91 image dataset** by cropping 91 images into $35 \times 35$ patches, applying Gaussian blur, and adding 1/3 downscaling-upscaling degradation to simulate double blur.
+* Trained and compared **DeblurCNN**, **DeblurCNN_RES**, **DeblurSuperResCNN**, **DnCNN**, and **EDSR** with patch-based inputs, tuned training settings, loss curves, and **PSNR (Peak Signal-to-Noise Ratio)**.
+* Compared sharp, blurred, and restored outputs visually and quantitatively, then applied the selected model to an extra image outside the training and testing sets to evaluate generalization.
 
 ---
 
